@@ -1,0 +1,161 @@
+/**
+#0C44A4; - BLUE
+#FFF762; - YELLOW
+font-family: 'Quicksand', sans-serif; - MAIN FONT
+**/
+	
+header,
+nav,
+article,
+footer {
+	display: block;
+}
+
+/**My webpage layout**/
+body {
+	font-size: 16px;
+	background-color: #6892CF;
+}
+
+div#container {
+	width: 960px;
+	margin: auto;
+	padding: 10px 10px;
+}
+
+header {
+	border: 2px solid #fff;
+	padding: 10px 25px;
+	background-color: #0C44A4;
+	text-align: center;
+	width: 900px;
+	overflow: auto;
+	margin-bottom: 10px;
+}
+
+
+h2{
+	font-size: 23px;
+	font-family: 'Quicksand', sans-serif;
+	color: #fff;
+}
+
+h3{
+	font-size: 19px;
+	font-family: 'Quicksand', sans-serif;
+	color: #fff;
+}
+
+header h1{  
+	color: #FFF762;
+	float: left;
+	padding: 2px 5px;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 60px; /**When making my index page, I had a bigger font (80px) but then when making the other pages I noticed that because of the font size and the length of the title, my nav got messed up. This is why I have changed the font size to 60px. **/
+	overflow: auto;
+}
+
+nav {
+	font-family: 'Quicksand', sans-serif;
+	padding: 10px 10px;  /**This puts padding in nav: 10px at top and bottom; 10 at left and right. I have done this to make sure that my nav links are easy to find and are readable.**/
+	font: 30px;
+	overflow: hidden;
+ }
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0; 
+	float: right; 
+}
+	
+nav ul li {
+	list-style: none;
+	color: #FFF762;
+	margin: 0 2.5em 0 0;
+	padding: 0;
+	float: left;
+	font-size: 1.0em;
+}
+
+a {
+	color: #fff; 
+    text-decoration: none; 
+}
+
+a:hover {
+	color: #FFF762; 
+    text-decoration: underline; 
+}
+
+a:active {
+	color: #FFF762;
+    text-decoration: underline; /** I have made the a:active text colour the same as the a:hover colour so that colour doesnt change and confuse the user**/
+}
+
+article {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 15px;
+	color: #fff;
+	border: 2px solid #fff;
+	height: auto;
+	width: 270px;
+	padding: 10px 25px;
+	background-color: #0C44A4;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
+	overflow: auto;
+}
+
+#article2 {
+	border: transparent;
+	background-color: transparent; /**I have made this transparent so the background colour of my website seeps through and becomes the backgound of all my images. **/
+	width: 620px;
+	padding: 0px 0px;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;	
+	overflow: auto;
+}
+	
+p{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 19px; /**The normal size is 16px. I have made this font slightly bigger because half of my Irish extended family don't have the best eyesight**/
+	color: #fff;
+}
+
+ul{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 15px;
+	color: #fff;
+}
+
+img {
+	border: 2px solid #fff;
+	float: left;
+	margin: 3px;
+	overflow: auto;
+}
+
+footer {
+	border: 2px solid #fff;
+	background-color: #0C44A4;
+	text-align: center; /**Center tends to look better for text in a footer so this is why I have put text-align as center**/
+	overflow: auto;
+	margin-top: 10px;
+	clear: both;
+}
+  
+footer p{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 15px;
+	color: #fff;
+}
+
+#smalltext {
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+}
