@@ -9,8 +9,9 @@ if($dbcon == NULL) {
 }
 
 /*SQL query to return all drinks*/
-$specials_query = "SELECT food_id, drink_id, week_id, sugar, cost, available
-FROM Specials";
+$specials_query = "SELECT food_id, drink_id, week_day, sugar, cost, available
+FROM Specials
+";
 
 /*query the database*/
 $specials_result = mysqli_query($dbcon, $specials_query);
@@ -83,6 +84,7 @@ if($specials_rows > 0) {
 				
 		<footer>
 			<p>&copy; Neve McCarthy 2022</p>
+			<p>All images used taken by Neve McCarthy</p>
 		</footer>			
 	</div>
 </body>

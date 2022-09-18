@@ -3,7 +3,7 @@
 -- Host: localhost	Database: nevemccarthy_cafe
 -- ------------------------------------------------------
 -- Server version 	8.0.30-0ubuntu0.20.04.2
--- Date: Thu, 15 Sep 2022 23:02:29 +0000
+-- Date: Sun, 18 Sep 2022 23:30:35 +0000
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -111,4 +111,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Thu, 15 Sep 2022 23:02:29 +0000
+-- Dump completed on: Sun, 18 Sep 2022 23:30:35 +0000

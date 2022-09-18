@@ -24,7 +24,7 @@ if($drink_rows > 0) {
     echo "No results found.";
 }
 
-$drink = "'chosen drink'";
+$drink = $drink_record;
 
 ?>
 
@@ -59,10 +59,10 @@ $drink = "'chosen drink'";
 					?> </h3>
 				
 				<?php
-				$cost = 20;
-				$sugar = 20;
-				$amount = 20;
-				$available = "Yes";
+				$cost = "cost of chosen drink";
+				$sugar = "sugar of chosen drink";
+				$amount = "amount of mL in the chosen drink";
+				$available = "Avalibility of chosen drink";
 				
 				function info($sugar, $amount, $available, $cost) {
 					echo nl2br("Sugar is $sugar g \n Amount is $amount mL \n Avalilable? $available \n Cost is $ $cost");

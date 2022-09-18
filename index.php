@@ -64,6 +64,7 @@ $email = "neve@school.com";
 			
 		<footer>
 			<p>&copy; Neve McCarthy 2022</p>
+			<p>All images used taken by Neve McCarthy</p>
 		</footer>			
 	</div>
 </body>
