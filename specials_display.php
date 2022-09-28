@@ -75,13 +75,14 @@ $specials = "'chosen special'";
 			</article>
 		
 			<article id="article2">
-				<img src="images/DSC_0344.jpg"  width =300 alt="" title="" />
-				<img src="images/DSC_0345(1).jpg"  width =300 alt="" title="" />
+				<img src="images/DSC_0219.JPG"  width =300 alt="Cafe sign" title="Cafe sign" />
+				<img src="images/DSC_0123.JPG"  width =300 alt="Brownies" title="Brownies" />
 			</article>
 				
 		<footer>
 			<p>&copy; Neve McCarthy 2022</p>
 			<p>All images used taken by Neve McCarthy</p>
+			<p><b>Information last updated Sep 2022</b><p>
 		</footer>			
 	</div>
 </body>

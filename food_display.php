@@ -13,7 +13,7 @@ $food_query = "SELECT food, sugar, amount, available, cost
 FROM Foods";
 
 /*query the database*/
-$foodk_result = mysqli_query($dbcon, $food_query);
+$food_result = mysqli_query($dbcon, $food_query);
 
 /*count our results*/
 $food_rows = mysqli_num_rows($food_result);
@@ -71,17 +71,18 @@ $food = "'chosen food'";
 				echo info($sugar, $amount, $available, $cost);
 				?>
 				
-				<br><br><br>
+				<br><br><br><br>
 			</article>
 		
 			<article id="article2">
-				<img src="images/DSC_0344.jpg"  width =300 alt="" title="" />
-				<img src="images/DSC_0345(1).jpg"  width =300 alt="" title="" />
+				<img src="images/DSC_0374.jpg"  width =300 alt="Sandwiches and donuts" title="Sandwiches and donuts" />
+				<img src="images/DSC_0119.JPG"  width =300 alt="Sandwiches and donuts" title="Sandwiches and donuts" />
 			</article>
 				
 		<footer>
 			<p>&copy; Neve McCarthy 2022</p>
 			<p>All images used taken by Neve McCarthy</p>
+			<p><b>Information last updated Sep 2022</b><p>
 		</footer>			
 	</div>
 </body>

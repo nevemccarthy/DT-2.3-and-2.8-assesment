@@ -8,26 +8,34 @@ if($dbcon == NULL) {
     exit();
 }
 
-/*SQL query to return all drinks*/
+
+/*SQL query to return all drinks*//*
 $drink_query = "SELECT drink, sugar, amount, available, cost FROM Drinks";
 
-/*query the database*/
+/*query the database*//*
 $drink_result = mysqli_query($dbcon, $drink_query);
 
-/*count our results*/
-$drink_rows = mysqli_num_rows($drink_result); 
+/*count our results*//*
+$drink_rows = mysqli_num_rows($drink_result); */
 
-$this_drink_query = "SELECT * FROM Drinks WHERE drinks.drink_id = '" .$drink_id . "'";
+/*Default value for page */
+if(isset($_GET['drink_sel'])) {
+	$drink_id = $_GET['drink_sel'];
+} else {
+	$drink_id = 1;
+}
+
+$this_drink_query = "SELECT * FROM Drinks WHERE Drinks.drink_id = '" .$drink_id . "'"; /* query is not structured correctly to run */
 $this_drink_result = mysqli_query($dbcon, $this_drink_query);
-$this_drink_record = mysqli_fetch_assoc($this_drink_result);
+$this_drink_record = mysqli_fetch_assoc($this_drink_result); 
 
-
+/*
 if($drink_rows > 0) {
     echo "There were ".$drink_rows." results returned.";
 } else {
     echo "No results found.";
 } 
-
+*/
 ?>
 
 <!DOCTYPE html>

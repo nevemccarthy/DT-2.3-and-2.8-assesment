@@ -69,21 +69,22 @@ if($food_rows > 0) {
 					
 					<input type='submit' name='foods_button' value='Show me information on this food'>
 					
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 						
 				</form>
 			</article>
 		
 			<article id="article2">
-				<img src="images/DSC_0354.jpg"  width =300 alt="" title="" />
-				<img src="images/DSC_0374.jpg"  width =300 alt="" title="" />
-				<img src="images/DSC_0354.jpg"  width =300 alt="" title="" />
-				<img src="images/DSC_0374.jpg"  width =300 alt="" title="" />
+				<img src="images/DSC_0117.JPG"  width =300 alt="Food on display" title="Food on display" />
+				<img src="images/DSC_0118.JPG"  width =300 alt="Food on display" title="Food on display" />
+				<img src="images/DSC_0125.JPG"  width =300 alt="Food on display" title="Food on display" />
+				<img src="images/DSC_0332.JPG"  width =300 alt="Food on display" title="Food on display" />
 			</article>
 				
 		<footer>
 			<p>&copy; Neve McCarthy 2022</p>
 			<p>All images used taken by Neve McCarthy</p>
+			<p><b>Information last updated Sep 2022</b><p>
 		</footer>			
 	</div>
 </body>

@@ -54,7 +54,7 @@ if($drink_rows > 0) {
 			<article>
 				<h3>Drinks form</h3>
 				<!--Drinks form-->
-				<form name ='drinks_form' id='drinks_form' method='get' action='drink_display.php'>
+				<form name ='drinks_form' id='drinks_form' method='get' action='drink_display_test.php'>
 					
 					<select id ='drink' name='drink'>
 						<!--options-->
@@ -70,21 +70,20 @@ if($drink_rows > 0) {
 					
 					<input type='submit' name='drinks_button' value='Show me information on this drink'>
 					
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 						
 				</form>
 			</article>
 		
 			<article id="article2">
-				<img src="images/DSC_0344.jpg"  width =300 alt="" title="" />
-				<img src="images/DSC_0345(1).jpg"  width =300 alt="" title="" />
-				<img src="images/DSC_0344.jpg"  width =300 alt="" title="" />
-				<img src="images/DSC_0345(1).jpg"  width =300 alt="" title="" />
+				<img src="images/DSC_0351.jpg"  width =300 alt="Stacked coffee cups" title="Stacked coffee cups" />
+				<img src="images/DSC_0366(1).jpg"  width =300 alt="Coffee cup lids" title="Coffee cup lids" />
 			</article>
 				
 		<footer>
 			<p>&copy; Neve McCarthy 2022</p>
 			<p>All images used taken by Neve McCarthy</p>
+			<p><b>Information last updated Sep 2022</b><p>
 		</footer>			
 	</div>
 </body>

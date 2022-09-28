@@ -52,19 +52,20 @@ $email = "neve@school.com";
 		</article>
 		
 		<article id="article2">
-			<img src="images/DSC_0360.jpg"  width =300 alt="" title="" />
-			<img src="images/DSC_0374.jpg"  width =300 alt="" title="" />
-			<img src="images/DSC_0366(1).jpg"  width =300 alt="" title="" />
-			<img src="images/DSC_0345.jpg"  width =300 alt="" title="" />
-			<img src="images/DSC_0360.jpg"  width =300 alt="" title="" />
-			<img src="images/DSC_0374.jpg"  width =300 alt="" title="" />
-			<img src="images/DSC_0360.jpg"  width =300 alt="" title="" />
-			<img src="images/DSC_0374.jpg"  width =300 alt="" title="" />
+			<img src="images/DSC_0360.jpg"  width =300 alt="Single muffin" title="Single muffin" />
+			<img src="images/DSC_0124.JPG"  width =300 alt="Cafe bench display" title="Cafe bench display" />
+			<img src="images/DSC_0224.JPG"  width =300 alt="School hall near cafe" title="School hall near cafe" />
+			<img src="images/DSC_0227.JPG"  width =300 alt="Seats by cafe" title="Seats by cafe" />
+			<img src="images/DSC_0218.JPG"  width =300 alt="WEGC balloons" title="WEGC balloons" />
+			<img src="images/DSC_0374.jpg"  width =300 alt="Toasties" title="Toasties" />
+			<img src="images/DSC_0226.JPG"  width =300 alt="School hall near cafe" title="School hall near cafe" />
+			<img src="images/DSC_0120.JPG"  width =300 alt="Fruit salad" title="Fruit salad" />
 		</article>
 			
 		<footer>
 			<p>&copy; Neve McCarthy 2022</p>
 			<p>All images used taken by Neve McCarthy</p>
+			<p><b>Information last updated Sep 2022</b><p>
 		</footer>			
 	</div>
 </body>

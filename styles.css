@@ -1,9 +1,3 @@
-/**
-#0C44A4; - BLUE
-#FFF762; - YELLOW
-font-family: 'Quicksand', sans-serif; - MAIN FONT
-**/
-	
 header,
 nav,
 article,
@@ -51,14 +45,13 @@ header h1{
 	float: left;
 	padding: 2px 5px;
 	font-family: 'Quicksand', sans-serif;
-	font-size: 60px; /**When making my index page, I had a bigger font (80px) but then when making the other pages I noticed that because of the font size and the length of the title, my nav got messed up. This is why I have changed the font size to 60px. **/
+	font-size: 60px;
 	overflow: auto;
 }
 
 nav {
 	font-family: 'Quicksand', sans-serif;
 	padding: 10px 10px;  /**This puts padding in nav: 10px at top and bottom; 10 at left and right. I have done this to make sure that my nav links are easy to find and are readable.**/
-	font: 30px;
 	overflow: hidden;
  }
 
@@ -72,10 +65,10 @@ nav ul {
 nav ul li {
 	list-style: none;
 	color: #FFF762;
-	margin: 0 2.5em 0 0;
+	margin: 0 17px 0 0;
 	padding: 0;
 	float: left;
-	font-size: 1.0em;
+	font-size: 17px;
 }
 
 a {
@@ -122,7 +115,7 @@ article {
 	
 p{
 	font-family: 'Quicksand', sans-serif;
-	font-size: 19px; /**The normal size is 16px. I have made this font slightly bigger because half of my Irish extended family don't have the best eyesight**/
+	font-size: 19px; /**The normal size is 16px. I have made this font slightly bigger because some people I have tested my website with cannot read small words.
 	color: #fff;
 }
 
