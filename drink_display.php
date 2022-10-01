@@ -8,25 +8,19 @@ if($dbcon == NULL) {
     exit();
 }
 
-/*SQL query to return all drinks*/
-$drink_query = "SELECT drink, sugar, amount, available, cost FROM Drinks";
-
-/*query the database*/
-$drink_result = mysqli_query($dbcon, $drink_query);
-
-/*count our results*/
-$drink_rows = mysqli_num_rows($drink_result); 
-
-$this_drink_query = "SELECT * FROM Drinks WHERE drinks.drink_id = '" .$drink_id . "'";
-$this_drink_result = mysqli_query($dbcon, $this_drink_query);
-$this_drink_record = mysqli_fetch_assoc($this_drink_result);
-
-
-if($drink_rows > 0) {
-    echo "There were ".$drink_rows." results returned.";
+/* Get from the drink id from drinks page else set default */
+if(isset($_GET['drink_sel'])){
+    $drink_id = $_GET['drink_sel'];
 } else {
-    echo "No results found.";
-} 
+	$drink_id = 1;
+}
+
+/* Create the SQL query */
+$this_drink_query = "SELECT * FROM Drinks WHERE Drinks.drink_id = '" .$drink_id . "'";
+ /* Perform the query against the database */
+$this_drink_result = mysqli_query($dbcon, $this_drink_query);
+/* Fetch the result into an associative array */
+$this_drink_record = mysqli_fetch_assoc($this_drink_result);
 
 ?>
 
@@ -62,23 +56,23 @@ if($drink_rows > 0) {
 				
 				<?php
 				echo "<p> Drink Name: ". $this_drink_record['drink'] . "<br>";
-				echo "<p> Cost: ". $this_drink_record['cost'] . "<br>";
-				echo "<p> Amount: ". $this_drink_record['amount'] . "<br>";
-				echo "<p> Sugar: ". $this_drink_record['sugar'] . "<br>";
+				echo "<p> Cost: $". $this_drink_record['cost'] . "<br>";
+				echo "<p> Amount: ". $this_drink_record['amount'] . "mL <br>";
+				echo "<p> Sugar: ". $this_drink_record['sugar'] . "g <br>";
 				echo "<p> Available: ". $this_drink_record['available'] . "<br>";
 				?>
 				
-				<br><br><br>
 			</article>
 		
 			<article id="article2">
-				<img src="images/DSC_0344.jpg"  width =300 alt="" title="" />
-				<img src="images/DSC_0345(1).jpg"  width =300 alt="" title="" />
+				<img src="images/DSC_0344.jpg"  width=300 alt="Coffee Machine" title="Coffee Machine" />
+				<img src="images/DSC_0345(1).jpg"  width=300 alt="Ice tea" title="Ice tea" />
 			</article>
 				
 		<footer>
 			<p>&copy; Neve McCarthy 2022</p>
 			<p>All images used taken by Neve McCarthy</p>
+			<p><b>Information last updated Sep 2022</b><p>
 		</footer>			
 	</div>
 </body>

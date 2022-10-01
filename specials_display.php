@@ -8,23 +8,45 @@ if($dbcon == NULL) {
     exit();
 }
 
-/*SQL query to return all specials*/
-$specials_query = "SELECT week_id, drink_id, food_id, available, cost
-FROM Specials";
-
-/*query the database*/
-$specials_result = mysqli_query($dbcon, $specials_query);
-
-/*count our results*/
-$specials_rows = mysqli_num_rows($specials_result);
-
-if($specials_rows > 0) {
-    echo "There were ".$specials_rows." results returned.";
+/* Get from the specials id from specials page else set default */
+if(isset($_GET['specials_sel'])){
+    $specials_id = $_GET['specials_sel'];
 } else {
-    echo "No results found.";
+	$specials_id = 1;
 }
 
-$specials = "'chosen special'";
+if(isset($_GET['specials_sel'])){
+    $food_id = $_GET['specials_sel'];
+} else {
+	$food_id = 1;
+}
+
+if(isset($_GET['specials_sel'])){
+    $drink_id = $_GET['specials_sel'];
+} else {
+	$drink_id = 1;
+}
+
+/* Create the SQL query */
+$this_specials_query = "SELECT * FROM Specials WHERE Specials.specials_id = '" .$specials_id . "'";
+ /* Perform the query against the database */
+$this_specials_result = mysqli_query($dbcon, $this_specials_query);
+/* Fetch the result into an associative array */
+$this_specials_record = mysqli_fetch_assoc($this_specials_result);
+
+/* Create the drink SQL query */
+$this_drink_query = "SELECT * FROM Drinks WHERE Drinks.drink_id = '" .$drink_id . "'";
+ /* Perform the query against the database */
+$this_drink_result = mysqli_query($dbcon, $this_drink_query);
+/* Fetch the result into an associative array */
+$this_drink_record = mysqli_fetch_assoc($this_drink_result);
+
+/* Create the food SQL query */
+$this_food_query = "SELECT * FROM Foods WHERE Foods.food_id = '" .$food_id . "'";
+ /* Perform the query against the database */
+$this_food_result = mysqli_query($dbcon, $this_food_query);
+/* Fetch the result into an associative array */
+$this_food_record = mysqli_fetch_assoc($this_food_result);
 
 ?>
 
@@ -54,24 +76,18 @@ $specials = "'chosen special'";
 		</header>
 			
 			<article>
-				<h3>Information on <?php 
-					echo $specials; 
+				<h3>Information for specials on <?php 
+					echo $this_specials_record['week_day']; 
 					?> </h3>
 				
 				<?php
-				$cost = 20;
-				$sugar = 20;
-				$amount = 20;
-				$available = "Yes";
-				
-				function info($sugar, $amount, $available, $cost) {
-					echo nl2br("Sugar is $sugar g \n Amount is $amount mL \n Avalilable? $available \n Cost is $ $cost");
-				}
-				
-				echo info($sugar, $amount, $available, $cost);
+				echo "<p> Specials Day: ". $this_specials_record['week_day'] . "<br>";
+				echo "<p> Includes: ". $this_food_record['food'] . " & " . $this_drink_record['drink'] . "<br>";
+				echo "<p> Cost: $". $this_specials_record['cost'] . "<br>";
+				echo "<p> Sugar: ". $this_specials_record['sugar'] . "g <br>";
+				echo "<p> Available: ". $this_specials_record['available'] . "<br>";
 				?>
 				
-				<br><br><br>
 			</article>
 		
 			<article id="article2">

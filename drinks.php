@@ -9,12 +9,9 @@ if($dbcon == NULL) {
 }
 
 /*SQL query to return all drinks*/
-$drink_query = "SELECT drink, sugar, amount, available, cost
-FROM Drinks";
-
+$drink_query = "SELECT * FROM Drinks";
 /*query the database*/
 $drink_result = mysqli_query($dbcon, $drink_query);
-
 /*count our results*/
 $drink_rows = mysqli_num_rows($drink_result);
 
@@ -23,6 +20,29 @@ if($drink_rows > 0) {
 } else {
     echo "No results found.";
 }
+
+
+/*SQL query for ordering*/
+$order_query = "SELECT * FROM Orders";
+$order_result = mysqli_query($dbcon, $order_query);
+
+if(isset($_GET['order_sel'])) {
+	$order_id = $_GET['order_sel'];
+} else {
+	$order_id = 1;
+}
+
+if($order_id == 1) {
+	$drink_query = "SELECT drink_id, drink FROM Drinks ORDER BY drink ASC";
+	$drink_result = mysqli_query($dbcon, $drink_query);
+} if($order_id == 2) {
+	$drink_query = "SELECT drink_id, drink FROM Drinks ORDER BY sugar ASC";
+	$drink_result = mysqli_query($dbcon, $drink_query);
+} if($order_id == 3) {
+	$drink_query = "SELECT drink_id, drink FROM Drinks ORDER BY cost ASC";
+	$drink_result = mysqli_query($dbcon, $drink_query);
+}
+
 
 ?>
 
@@ -52,15 +72,33 @@ if($drink_rows > 0) {
 		</header>
 			
 			<article>
+				<h3>Ordering the data form</h3>
+				<!--orders form-->
+				<form name='order_form' id='order_form' method='get' action='drinks.php'>
+					<!-- Dropdown Menu -->
+					<select name='order_sel' id='order_sel'>
+						<!-- Options -->
+						<?php
+						while($order_record = mysqli_fetch_assoc($order_result)){
+							echo "<option value ='".$order_record['order_id']."'>";
+							echo $order_record['order'];
+							echo "</option>";
+						}
+						?>
+					</select>
+					<!--- Sort Button -->
+					<input type="submit" name="order_button" id="order_button" value="Order drinks">
+				</form>
+				
 				<h3>Drinks form</h3>
 				<!--Drinks form-->
-				<form name ='drinks_form' id='drinks_form' method='get' action='drink_display_test.php'>
-					
-					<select id ='drink' name='drink'>
+				<form name ='drinks_form' id='drinks_form' method='get' action='drink_display.php'>
+
+					<select id ='drink_sel' name='drink_sel'>
 						<!--options-->
 						<?php 
 						while($drink_record = mysqli_fetch_assoc($drink_result)){
-							echo"<option value'". $drink_record["drink_id"]."'>";
+							echo"<option value ='". $drink_record['drink_id']."'>";
 							echo $drink_record['drink'];
 							echo"</option>";
 						}
@@ -69,10 +107,9 @@ if($drink_rows > 0) {
 					</select>
 					
 					<input type='submit' name='drinks_button' value='Show me information on this drink'>
-					
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-						
+					<br><br><br><br><br><br><br><br><br><br><br><br><br>
 				</form>
+
 			</article>
 		
 			<article id="article2">

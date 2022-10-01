@@ -10,11 +10,6 @@ if($dbcon == NULL) {
 
 ?>
 
-<?php
-$name = "neve";
-$email = "neve@school.com";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

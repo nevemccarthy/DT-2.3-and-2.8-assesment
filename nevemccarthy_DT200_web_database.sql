@@ -3,7 +3,7 @@
 -- Host: localhost	Database: nevemccarthy_DT200_web_database
 -- ------------------------------------------------------
 -- Server version 	8.0.30-0ubuntu0.20.04.2
--- Date: Wed, 28 Sep 2022 23:38:11 +0000
+-- Date: Sat, 01 Oct 2022 10:35:16 +0000
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -73,12 +73,40 @@ CREATE TABLE `Foods` (
 LOCK TABLES `Foods` WRITE;
 /*!40000 ALTER TABLE `Foods` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `Foods` VALUES (1,'Steak Pie',0.9,'no',4.8,'yes'),(2,'Vegetarian Pie',0.5,'yes',4.8,'yes'),(3,'Bacon & Egg Pie',10,'no',4.8,'yes'),(4,'Cheese Pie',0.7,'yes',4.8,'yes'),(5,'Sausage Roll',1.5,'no',3.5,'yes'),(6,'Vegetarian Sausage Roll',1.2,'yes',3.5,'yes'),(7,'Cookies',29,'yes',2,'yes'),(8,'Garlic Bread',3.7,'yes',2.8,'yes'),(9,'Sushi Selection (4 Piece)',2.5,'no',5,'yes'),(10,'Toasted Sandwich Selection',6,'no',3,'yes'),(11,'Plain Croissant ',11,'yes',2.5,'yes'),(12,'Brownies',30,'yes',3.5,'yes'),(13,'Caramel Slice',35,'yes',3.5,'yes'),(14,'Donuts',12,'yes',3,'yes'),(15,'Cake Slice',31,'yes',4,'yes'),(16,'Ham & Cheese Croissant',31,'no',5,'yes'),(17,'Cheese & Tomato Croissant',28,'yes',5,'yes'),(18,'Fruit Salad',36,'yes',4,'yes'),(19,'Pasta Salad',1,'no',4.5,'yes'),(20,'Roasted Vegetable Salad',0.5,'yes',4.5,'yes');
+INSERT INTO `Foods` VALUES (1,'Steak Pie',0.9,'no',4.8,'yes'),(2,'Vegetarian Pie',0.5,'yes',4.8,'yes'),(3,'Bacon & Egg Pie',10,'no',4.8,'yes'),(4,'Cheese Pie',0.7,'yes',4.8,'yes'),(5,'Sausage Roll',1.5,'no',3.5,'yes'),(6,'Vegetarian Sausage Roll',1.2,'yes',3.5,'yes'),(7,'Cookies',29,'yes',2,'yes'),(8,'Garlic Bread',3.7,'yes',2.8,'yes'),(9,'Sushi Selection (4 Piece)',2.5,'no',5,'yes'),(10,'Toasted Sandwich Selection',6,'no',3,'yes'),(11,'Plain Croissant ',11,'yes',2.5,'yes'),(12,'Brownies',30,'yes',3.5,'yes'),(13,'Caramel Slice',35,'yes',3.5,'yes'),(14,'Donuts',12,'yes',3,'yes'),(15,'Cake Slice',31,'yes',4,'yes'),(16,'Ham & Cheese Croissant',31,'no',5,'yes'),(17,'Cheese & Tomato Croissant',2.8,'yes',5,'yes'),(18,'Fruit Salad',3.6,'yes',4,'yes'),(19,'Pasta Salad',1,'no',4.5,'yes'),(20,'Roasted Vegetable Salad',0.5,'yes',4.5,'yes');
 /*!40000 ALTER TABLE `Foods` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
 -- Dumped table `Foods` with 20 row(s)
+--
+
+--
+-- Table structure for table `Orders`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Orders` (
+  `order_id` tinyint NOT NULL,
+  `order` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`order_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Orders`
+--
+
+LOCK TABLES `Orders` WRITE;
+/*!40000 ALTER TABLE `Orders` DISABLE KEYS */;
+SET autocommit=0;
+INSERT INTO `Orders` VALUES (1,'Alphabetically (A-Z)'),(2,'Sugar (Low to High)'),(3,'Cost (Low to High)');
+/*!40000 ALTER TABLE `Orders` ENABLE KEYS */;
+UNLOCK TABLES;
+COMMIT;
+
+-- Dumped table `Orders` with 3 row(s)
 --
 
 --
@@ -106,7 +134,7 @@ CREATE TABLE `Specials` (
 LOCK TABLES `Specials` WRITE;
 /*!40000 ALTER TABLE `Specials` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `Specials` VALUES (1,5,1,'monday',0.9,7.5,'yes'),(2,6,15,'tuesday',35,7,'yes'),(3,14,10,'wednesday',6,5.5,'yes'),(4,12,19,'thursday',61,9,'yes'),(5,9,5,'friday',14.5,6.5,'yes');
+INSERT INTO `Specials` VALUES (1,5,1,'Monday',0.9,7.5,'yes'),(2,6,15,'Tuesday',35,7,'yes'),(3,14,10,'Wednesday',6,5.5,'yes'),(4,12,19,'Thursday',61,9,'yes'),(5,9,5,'Friday',14.5,6.5,'yes');
 /*!40000 ALTER TABLE `Specials` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -124,4 +152,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Wed, 28 Sep 2022 23:38:12 +0000
+-- Dump completed on: Sat, 01 Oct 2022 10:35:16 +0000

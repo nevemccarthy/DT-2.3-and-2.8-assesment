@@ -8,23 +8,20 @@ if($dbcon == NULL) {
     exit();
 }
 
-/*SQL query to return all foods*/
-$food_query = "SELECT food, sugar, amount, available, cost
-FROM Foods";
-
-/*query the database*/
-$food_result = mysqli_query($dbcon, $food_query);
-
-/*count our results*/
-$food_rows = mysqli_num_rows($food_result);
-
-if($food_rows > 0) {
-    echo "There were ".$food_rows." results returned.";
+/* Get from the food id from foods page else set default */
+if(isset($_GET['food_sel'])){
+    $food_id = $_GET['food_sel'];
 } else {
-    echo "No results found.";
+	$food_id = 1;
 }
 
-$food = "'chosen food'";
+/* Create the SQL query */
+$this_food_query = "SELECT * FROM Foods WHERE Foods.food_id = '" .$food_id . "'";
+ /* Perform the query against the database */
+$this_food_result = mysqli_query($dbcon, $this_food_query);
+
+/* Fetch the result into an associative array */
+$this_food_record = mysqli_fetch_assoc($this_food_result);
 
 ?>
 
@@ -55,23 +52,17 @@ $food = "'chosen food'";
 			
 			<article>
 				<h3>Information on <?php 
-					echo $food; 
+					echo $this_food_record['food']; 
 					?> </h3>
 				
 				<?php
-				$cost = 20;
-				$sugar = 20;
-				$amount = 20;
-				$available = "Yes";
-				
-				function info($sugar, $amount, $available, $cost) {
-					echo nl2br("Sugar is $sugar g \n Amount is $amount mL \n Avalilable? $available \n Cost is $ $cost");
-				}
-				
-				echo info($sugar, $amount, $available, $cost);
+				echo "<p> Food Name: ". $this_food_record['food'] . "<br>";
+				echo "<p> Cost: $". $this_food_record['cost'] . "<br>";
+				echo "<p> Sugar: ". $this_food_record['sugar'] . "g <br>";
+				echo "<p> Vegetarian: ". $this_food_record['veg'] . "<br>";
+				echo "<p> Available: ". $this_food_record['available'] . "<br>";
 				?>
 				
-				<br><br><br><br>
 			</article>
 		
 			<article id="article2">

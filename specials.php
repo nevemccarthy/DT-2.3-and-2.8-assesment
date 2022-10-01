@@ -9,9 +9,7 @@ if($dbcon == NULL) {
 }
 
 /*SQL query to return all drinks*/
-$specials_query = "SELECT food_id, drink_id, week_day, sugar, cost, available
-FROM Specials
-";
+$specials_query = "SELECT * FROM Specials";
 
 /*query the database*/
 $specials_result = mysqli_query($dbcon, $specials_query);
@@ -23,6 +21,27 @@ if($specials_rows > 0) {
     echo "There were ".$specials_rows." results returned.";
 } else {
     echo "No results found.";
+}
+
+/*SQL query for ordering*/
+$order_query = "SELECT * FROM Orders";
+$order_result = mysqli_query($dbcon, $order_query);
+
+if(isset($_GET['order_sel'])) {
+	$order_id = $_GET['order_sel'];
+} else {
+	$order_id = 1;
+}
+
+if($order_id == 1) {
+	$specials_query = "SELECT specials_id, week_day FROM Specials ORDER BY week_day ASC";
+	$specials_result = mysqli_query($dbcon, $specials_query);
+} if($order_id == 2) {
+	$specials_query = "SELECT specials_id, week_day FROM Specials ORDER BY sugar ASC";
+	$specials_result = mysqli_query($dbcon, $specials_query);
+} if($order_id == 3) {
+	$specials_query = "SELECT specials_id, week_day FROM Specials ORDER BY cost ASC";
+	$specials_result = mysqli_query($dbcon, $specials_query);
 }
 
 ?>
@@ -53,15 +72,33 @@ if($specials_rows > 0) {
 		</header>
 			
 			<article>
+				<h3>Ordering the data form</h3>
+				<!--orders form-->
+				<form name='order_form' id='order_form' method='get' action='specials.php'>
+					<!-- Dropdown Menu -->
+					<select name='order_sel' id='order_sel'>
+						<!-- Options -->
+						<?php
+						while($order_record = mysqli_fetch_assoc($order_result)){
+							echo "<option value ='".$order_record['order_id']."'>";
+							echo $order_record['order'];
+							echo "</option>";
+						}
+						?>
+					</select>
+					<!--- Sort Button -->
+					<input type="submit" name="order_button" id="order_button" value="Order specials">
+				</form>
+				
 				<h3>Specials form</h3>
 				<!--specials form-->
 				<form name ='specials_form' id='specials_form' method='get' action='specials_display.php'>
 					
-					<select id ='week_day' name='week_day'>
+					<select id ='specials_sel' name='specials_sel'>
 						<!--options-->
 						<?php 
 						while($specials_record = mysqli_fetch_assoc($specials_result)){
-							echo"<option value'". $specials_record["specials_id"]."'>";
+							echo"<option value ='". $specials_record['specials_id']."'>";
 							echo $specials_record['week_day'];
 							echo"</option>";
 						}

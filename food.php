@@ -8,9 +8,8 @@ if($dbcon == NULL) {
     exit();
 }
 
-/*SQL query to return all drinks*/
-$food_query = "SELECT food, sugar, cost, available
-FROM Foods";
+/*SQL query to return all foods*/
+$food_query =  "SELECT * FROM Foods";
 
 /*query the database*/
 $food_result = mysqli_query($dbcon, $food_query);
@@ -22,6 +21,27 @@ if($food_rows > 0) {
     echo "There were ".$food_rows." results returned.";
 } else {
     echo "No results found.";
+}
+
+/*SQL query for ordering*/
+$order_query = "SELECT * FROM Orders";
+$order_result = mysqli_query($dbcon, $order_query);
+
+if(isset($_GET['order_sel'])) {
+	$order_id = $_GET['order_sel'];
+} else {
+	$order_id = 1;
+}
+
+if($order_id == 1) {
+	$food_query = "SELECT food_id, food FROM Foods ORDER BY food ASC";
+	$food_result = mysqli_query($dbcon, $food_query);
+} if($order_id == 2) {
+	$food_query = "SELECT food_id, food FROM Foods ORDER BY sugar ASC";
+	$food_result = mysqli_query($dbcon, $food_query);
+} if($order_id == 3) {
+	$food_query = "SELECT food_id, food FROM Foods ORDER BY cost ASC";
+	$food_result = mysqli_query($dbcon, $food_query);
 }
 
 ?>
@@ -52,15 +72,33 @@ if($food_rows > 0) {
 		</header>
 			
 			<article>
+				<h3>Ordering the data form</h3>
+				<!--orders form-->
+				<form name='order_form' id='order_form' method='get' action='food.php'>
+					<!-- Dropdown Menu -->
+					<select name='order_sel' id='order_sel'>
+						<!-- Options -->
+						<?php
+						while($order_record = mysqli_fetch_assoc($order_result)){
+							echo "<option value ='".$order_record['order_id']."'>";
+							echo $order_record['order'];
+							echo "</option>";
+						}
+						?>
+					</select>
+					<!--- Sort Button -->
+					<input type="submit" name="order_button" id="order_button" value="Order foods">
+				</form>
+				
 				<h3>Foods form</h3>
 				<!--Foods form-->
 				<form name ='foods_form' id='foods_form' method='get' action='food_display.php'>
 					
-					<select id ='food' name='food'>
+					<select id ='food_sel' name='food_sel'>
 						<!--options-->
 						<?php 
 						while($food_record = mysqli_fetch_assoc($food_result)){
-							echo"<option value'". $food_record["food_id"]."'>";
+							echo"<option value ='". $food_record['food_id']."'>";
 							echo $food_record['food'];
 							echo"</option>";
 						}
