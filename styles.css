@@ -30,7 +30,7 @@ header {
 
 h2{
 	font-size: 23px;
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'Quicksand', sans-serif; /** This font is simple and readable for dyslexic people **/
 	color: #fff;
 }
 
@@ -83,7 +83,7 @@ a:hover {
 
 a:active {
 	color: #FFF762;
-    text-decoration: underline; /** I have made the a:active text colour the same as the a:hover colour so that colour doesnt change and confuse the user**/
+    text-decoration: underline; /** I have made the a:active text colour the same as the a:hover colour so that colour doesn't change or confuse the user**/
 }
 
 article {
@@ -103,7 +103,7 @@ article {
 
 #article2 {
 	border: transparent;
-	background-color: transparent; /**I have made this transparent so the background colour of my website seeps through and becomes the backgound of all my images. **/
+	background-color: transparent; /**I have made this transparent so the background colour of my website seeps through and becomes the background of all my images. **/
 	width: 620px;
 	padding: 0px 0px;
 	margin-left: 10px;
