@@ -17,11 +17,14 @@ $specials_result = mysqli_query($dbcon, $specials_query);
 /*count our results*/
 $specials_rows = mysqli_num_rows($specials_result);
 
+/** I have decided not to add this code in for aesthetic reasons but have turned it to a comment so if someone editing this 
+code wants to change it or view the return results they already have the code ready.
+
 if($specials_rows > 0) {
     echo "There were ".$specials_rows." results returned.";
 } else {
     echo "No results found.";
-}
+} **/
 
 /*SQL query for ordering*/
 $order_query = "SELECT * FROM Orders";
@@ -113,8 +116,8 @@ if($order_id == 1) {
 			</article>
 		
 			<article id="article2">
-				<img src="images/DSC_0219.JPG"  width =300 alt="Cafe sign" title="Cafe sign" />
-				<img src="images/DSC_0123.JPG"  width =300 alt="Brownies" title="Brownies" />
+				<img src="images/DSC_0219.JPG"  width =300 alt="Cafe sign" title="Cafe sign">
+				<img src="images/DSC_0123.JPG"  width =300 alt="Brownies" title="Brownies">
 			</article>
 				
 		<footer>

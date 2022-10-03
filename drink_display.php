@@ -65,8 +65,8 @@ $this_drink_record = mysqli_fetch_assoc($this_drink_result);
 			</article>
 		
 			<article id="article2">
-				<img src="images/DSC_0344.jpg"  width=300 alt="Coffee Machine" title="Coffee Machine" />
-				<img src="images/DSC_0345(1).jpg"  width=300 alt="Ice tea" title="Ice tea" />
+				<img src="images/DSC_0344.jpg"  width=300 alt="Coffee Machine" title="Coffee Machine">
+				<img src="images/DSC_0345(1).jpg"  width=300 alt="Ice tea" title="Ice tea">
 			</article>
 				
 		<footer>

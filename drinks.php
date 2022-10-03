@@ -15,11 +15,14 @@ $drink_result = mysqli_query($dbcon, $drink_query);
 /*count our results*/
 $drink_rows = mysqli_num_rows($drink_result);
 
+/** I have decided not to add this code in for aesthetic reasons but have turned it to a comment so if someone editing this 
+code wants to change it or view the return results they already have the code ready.
+
 if($drink_rows > 0) {
     echo "There were ".$drink_rows." results returned.";
 } else {
     echo "No results found.";
-}
+} **/
 
 
 /*SQL query for ordering*/
@@ -113,8 +116,8 @@ if($order_id == 1) {
 			</article>
 		
 			<article id="article2">
-				<img src="images/DSC_0351.jpg"  width =300 alt="Stacked coffee cups" title="Stacked coffee cups" />
-				<img src="images/DSC_0366(1).jpg"  width =300 alt="Coffee cup lids" title="Coffee cup lids" />
+				<img src="images/DSC_0351.jpg"  width =300 alt="Stacked coffee cups" title="Stacked coffee cups">
+				<img src="images/DSC_0366(1).jpg"  width =300 alt="Coffee cup lids" title="Coffee cup lids">
 			</article>
 				
 		<footer>

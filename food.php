@@ -17,11 +17,14 @@ $food_result = mysqli_query($dbcon, $food_query);
 /*count our results*/
 $food_rows = mysqli_num_rows($food_result);
 
+/** I have decided not to add this code in for aesthetic reasons but have turned it to a comment so if someone editing this 
+code wants to change it or view the return results they already have the code ready.
+
 if($food_rows > 0) {
     echo "There were ".$food_rows." results returned.";
 } else {
     echo "No results found.";
-}
+} **/
 
 /*SQL query for ordering*/
 $order_query = "SELECT * FROM Orders";
@@ -113,10 +116,10 @@ if($order_id == 1) {
 			</article>
 		
 			<article id="article2">
-				<img src="images/DSC_0117.JPG"  width =300 alt="Food on display" title="Food on display" />
-				<img src="images/DSC_0118.JPG"  width =300 alt="Food on display" title="Food on display" />
-				<img src="images/DSC_0125.JPG"  width =300 alt="Food on display" title="Food on display" />
-				<img src="images/DSC_0332.JPG"  width =300 alt="Food on display" title="Food on display" />
+				<img src="images/DSC_0117.JPG"  width =300 alt="Food on display" title="Food on display">
+				<img src="images/DSC_0118.JPG"  width =300 alt="Food on display" title="Food on display">
+				<img src="images/DSC_0125.JPG"  width =300 alt="Food on display" title="Food on display">
+				<img src="images/DSC_0332.JPG"  width =300 alt="Food on display" title="Food on display">
 			</article>
 				
 		<footer>

@@ -66,8 +66,8 @@ $this_food_record = mysqli_fetch_assoc($this_food_result);
 			</article>
 		
 			<article id="article2">
-				<img src="images/DSC_0374.jpg"  width =300 alt="Sandwiches and donuts" title="Sandwiches and donuts" />
-				<img src="images/DSC_0119.JPG"  width =300 alt="Sandwiches and donuts" title="Sandwiches and donuts" />
+				<img src="images/DSC_0374.jpg"  width =300 alt="Sandwiches and donuts" title="Sandwiches and donuts">
+				<img src="images/DSC_0119.JPG"  width =300 alt="Sandwiches and donuts" title="Sandwiches and donuts">
 			</article>
 				
 		<footer>
