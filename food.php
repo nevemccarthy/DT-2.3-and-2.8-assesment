@@ -63,10 +63,10 @@ if($order_id == 1) {
 			<h1>Foods</h1>
 		<nav>
 			<ul>
-				<li><a title="Home page" href="index.php" >Home</a></li>
-				<li><a title="Drinks page" href="drinks.php">Drinks</a></li>
-				<li><a title="Food page" href="food.php">Food</a></li>
-				<li><a title="Weekly Specials page" href="specials.php">Weekly Specials</a></li>
+				<li><a href="index.php" >Home</a></li>
+				<li><a href="drinks.php">Drinks</a></li>
+				<li><a href="food.php">Food</a></li>
+				<li><a href="specials.php">Weekly Specials</a></li>
 			</ul>
 		</nav>
 		</header>
@@ -107,7 +107,7 @@ if($order_id == 1) {
 					
 					<input type='submit' name='foods_button' value='Show me information on this food'>
 					
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<br><br><br><br><br><br><br><br><br><br><br><br>
 						
 				</form>
 			</article>

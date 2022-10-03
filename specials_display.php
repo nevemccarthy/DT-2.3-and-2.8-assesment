@@ -9,44 +9,29 @@ if($dbcon == NULL) {
 }
 
 /* Get from the specials id from specials page else set default */
-if(isset($_GET['specials_sel'])){
-    $specials_id = $_GET['specials_sel'];
-} else {
-	$specials_id = 1;
-}
+$specials_query = "SELECT Special.special_id, Foods.food, Drinks.drink, Specials.cost, Specials.week_day
+ FROM Specials, Foods, Drinks
+ WHERE Foods.food_id = Specials.food_id
+ AND Specials.drink_id = Drinks.drink_id";
+$specials_result = mysqli_query($dbcon, $specials_query);
 
-if(isset($_GET['specials_sel'])){
-    $food_id = $_GET['specials_sel'];
-} else {
-	$food_id = 1;
-}
+if(isset($_GET['specials_sel'])) {
+      $specials_id = $_GET['specials_sel'];
+  } else {
+      $specials_id = 1;
+  }
 
-if(isset($_GET['specials_sel'])){
-    $drink_id = $_GET['specials_sel'];
-} else {
-	$drink_id = 1;
-}
-
-/* Create the SQL query */
 $this_specials_query = "SELECT * FROM Specials WHERE Specials.specials_id = '" .$specials_id . "'";
- /* Perform the query against the database */
 $this_specials_result = mysqli_query($dbcon, $this_specials_query);
-/* Fetch the result into an associative array */
 $this_specials_record = mysqli_fetch_assoc($this_specials_result);
 
-/* Create the drink SQL query */
-$this_drink_query = "SELECT * FROM Drinks WHERE Drinks.drink_id = '" .$drink_id . "'";
- /* Perform the query against the database */
-$this_drink_result = mysqli_query($dbcon, $this_drink_query);
-/* Fetch the result into an associative array */
-$this_drink_record = mysqli_fetch_assoc($this_drink_result);
+$food = "SELECT Specials.food_id,Foods.food FROM Foods, Specials WHERE Foods.food_id = Specials.food_id AND Specials.specials_id = '" .$specials_id . "'";
+$food_result = mysqli_query($dbcon, $food);
+$this_food_record = mysqli_fetch_assoc($food_result);
 
-/* Create the food SQL query */
-$this_food_query = "SELECT * FROM Foods WHERE Foods.food_id = '" .$food_id . "'";
- /* Perform the query against the database */
-$this_food_result = mysqli_query($dbcon, $this_food_query);
-/* Fetch the result into an associative array */
-$this_food_record = mysqli_fetch_assoc($this_food_result);
+$drink = "SELECT Specials.drink_id,Drinks.drink FROM Drinks, Specials WHERE Drinks.drink_id = Specials.drink_id AND Specials.specials_id = '" .$specials_id . "'";
+$drink_result = mysqli_query($dbcon, $drink);
+$this_drink_record = mysqli_fetch_assoc($drink_result);
 
 ?>
 
@@ -67,10 +52,10 @@ $this_food_record = mysqli_fetch_assoc($this_food_result);
 			<h1>Specials Info</h1>
 		<nav>
 			<ul>
-				<li><a title="Home page" href="index.php" >Home</a></li>
-				<li><a title="Drinks page" href="drinks.php">Drinks</a></li>
-				<li><a title="Food page" href="food.php">Food</a></li>
-				<li><a title="Weekly Specials page" href="specials.php">Weekly Specials</a></li>
+				<li><a href="index.php" >Home</a></li>
+				<li><a href="drinks.php">Drinks</a></li>
+				<li><a href="food.php">Food</a></li>
+				<li><a href="specials.php">Weekly Specials</a></li>
 			</ul>
 		</nav>
 		</header>
